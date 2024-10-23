@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/img/planeta.png">
+    <title>Galaxy Search</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/fonts.css">
+    <link rel="stylesheet" href="src/css/animations.css ">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Explorando o Universo</h1>
+        </div>
+    </header>
+
+    <main class="imgDay">
+        <div id="imgDayCont" class="container">
+            <div id="imgDayMedia" class="img">
+
+                <span id="imgDayCopright" class="copy"></span>
+                <span id="imgDayDate" class="date"></span>
+                <h2 id="imgDayName"></h2>
+            </div>
+            <div class="description">
+                <h2 id="imgDayTitle"></h2>
+                <p id="imgDayExplanation"></p>
+            </div>
+        </div>
+    </main>
+
+    <section id="library" class="library">
+        <div id="container" class="container">
+            <div id="form" class="form">
+                <h2>Bliblioteca da NASA</h2>
+                <label for="search">Pesquise sobre a Galaxia</label>
+                <input id="search" type="text" placeholder="Digite em english" form="search">
+                <button id="btnSearch" type="button" class="fromBtn">Pesquisar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="marsImg" class="marsImg">
+        <h2>Fotos do Mars Rover</h2>
+        <div id="marsImgCont" class="container">
+            <div id="MarsImgForm" class="form">
+                <button id="camRover" class="formButton">Escolher Camera</button>
+                <button id="allRoverPhotos" class="formButton">Todas as Fotos</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <a href="" target="_blank">Criado utilizando NASA API</a> 
+    </footer>
+    
+    <script src="src/js/assets.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,727 @@
+/* RESETS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(90deg, #6c5ce7, #1e1e78, #000000);
+    background-size: 300% 300%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    animation-name: headerGradient;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.logo {
+    margin-left: 1%;
+    position: relative;
+}
+
+.header .logo h1 {
+    font-family: TROGLO, sans-serif;
+    font-size: 30px;
+    background: linear-gradient(90deg, #6c5ce7, #ff2e63);
+    background-clip: text;
+    color: transparent;
+}
+
+/* main */
+
+.imgDay {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #000000;
+}
+
+.imgDay .container {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+}
+
+.imgDay .container::after,
+.imgDay .container::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -12px;
+    left: -10px;
+    width: calc(100% + 25px);
+    height: calc(100% + 25px);
+    background: linear-gradient(45deg,
+            rgb(138, 79, 255),
+            rgb(0, 170, 255),
+            rgb(0, 0, 0),
+            rgb(30, 30, 120),
+            rgb(255, 71, 87),
+            rgb(255, 99, 72),
+            rgb(106, 86, 227),
+            rgb(138, 79, 255));
+    animation-name: imageDayBorder;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    background-size: 300%;
+    border-radius: 10px;
+}
+
+.imgDay .container::after {
+    filter: blur(25px);
+}
+
+.imgDay .container .img {
+    position: relative;
+    z-index: 3;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+.imgDay .container .img .copy {
+    font-family: Orbitron, sans-serif;
+    background: linear-gradient(90deg,
+            rgb(255, 71, 87),
+            rgb(255, 99, 72),
+            rgb(106, 86, 227));
+    background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    bottom: 20%;
+    left: 5.5%;
+}
+
+.imgDay .container .img .date {
+    font-family: Orbitron, sans-serif;
+    background: linear-gradient(90deg,
+            rgb(138, 79, 255),
+            rgb(0, 170, 255),
+            rgb(106, 86, 227));
+    background-clip: text;
+    color: transparent;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 5.5%;
+}
+
+.imgDay .container .img img,
+.imgDay .container .img video {
+    width: 90%;
+    height: 80%;
+}
+
+.imgDay .container .img h2 {
+    font-family: TROGLO, sans-serif;
+    text-align: center;
+    margin: 2% auto;
+    font-size: 25px;
+    background: linear-gradient(90deg, #8a4fff, #00aaff, #ff4757);
+    background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.imgDay .container .description {
+    background-color: #000000;
+    position: relative;
+    z-index: 3;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    overflow-y: auto;
+}
+
+.imgDay .container .description h2 {
+    font: 25px;
+    color: white;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.imgDay .container .description p {
+    font: 15px;
+    color: white;
+    font-weight: 500px;
+    font-family: Orbitron, sans-serif;
+}
+
+.loading {
+    z-index: 3;
+    position: absolute;
+    top: 35%;
+    left: 41%;
+    width: 100px;
+    height: 100px;
+    border: 5px solid white;
+    border-top: 5px solid blue;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* LIBRARY */
+
+.library {
+    position: relative;
+    width: 100%;
+    height: 525px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+.library .container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #000000;
+    margin-bottom: 5%;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.library .container .form {
+    z-index: 3;
+    position: relative;
+    width: 50%;
+    height: 66%;
+    margin: auto auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg,
+            rgba(38, 6, 107, 1),
+            rgba(0, 170, 255, 1),
+            rgba(255, 71, 87, 1),
+            rgba(106, 86, 227, 1),
+            rgba(0, 0, 0, 1));
+    background-size: 300% 300%;
+    border-radius: 10px;
+    animation-name: libraryGradient;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.library .container .form h2 {
+    font-size: 25px;
+    color: #000000;
+    font-family: TROGLO, sans-serif;
+    font-weight: bold;
+    background: linear-gradient(135deg,
+            rgb(38, 6, 107),
+            /* Roxo escuro */
+            rgb(0, 128, 255),
+            /* Azul intenso */
+            rgb(0, 255, 255),
+            /* Ciano brilhante */
+            rgb(255, 255, 0),
+            /* Amarelo brilhante */
+            rgb(255, 165, 0),
+            /* Laranja vibrante */
+            rgb(255, 0, 0),
+            /* Vermelho vivo */
+            rgb(255, 0, 255)
+            /* Magenta */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin: 5% 0;
+}
+
+.library .container .form label {
+    font-size: 20px;
+    color: #000000;
+    font-family: Orbitron, sans-serif;
+}
+
+.library .container .form input {
+    margin: 5% 0;
+    outline: none;
+    border: none;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.library .container .form input:focus {
+    box-shadow: 0 0 2px 2px #000000;
+}
+
+.library .container .form input::placeholder {
+    font-family: TROGLO, sans-serif;
+}
+
+.library .container .form .fromBtn {
+    font-family: Orbitron, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 25px;
+    cursor: pointer;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    background: linear-gradient(90deg,
+            rgb(38, 6, 107),
+            rgb(0, 170, 255),
+            rgb(0, 255, 128),
+            rgb(255, 255, 0),
+            rgb(255, 0, 0),
+            rgb(255, 0, 255));
+    background-size: 300% 300%;
+}
+
+.library .container .form .fromBtn:hover {
+    animation-name: btnHover;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.loadingLibrary {
+    width: 100px;
+    height: 100px;
+    border: 5px solid white;
+    border-top: 5px solid blue;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+
+.cards {
+    z-index: 3;
+    position: relative;
+    width: 286px;
+    height: 225px;
+    border: 5px solid red;
+    margin: 1%;
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+    border-radius: 10px;
+    background-color: #000000;
+    box-shadow: 0 0 12px 1px red;
+}
+
+.cards img,
+.cards video {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 80%;
+}
+
+.cards #cardsTitle {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    font-family: Orbitron, sans-serif;
+    font-weight: bold;
+    background: linear-gradient(90deg,
+            rgb(0, 191, 255),
+            /* Azul céu */
+            rgb(173, 216, 230),
+            /* Azul claro */
+            rgb(255, 0, 255),
+            /* Magenta */
+            rgb(255, 255, 0),
+            /* Amarelo brilhante */
+            rgb(0, 255, 255),
+            /* Ciano */
+            rgb(255, 105, 180),
+            /* Rosa vibrante */
+            rgb(255, 165, 0)
+            /* Laranja vibrante */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.btnSearch {
+    position: absolute;
+    bottom: 0;
+    font-family: Orbitron, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px 35px;
+    cursor: pointer;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    background: linear-gradient(90deg,
+            rgb(38, 6, 107),
+            rgb(0, 170, 255),
+            rgb(0, 255, 128),
+            rgb(255, 255, 0),
+            rgb(255, 0, 0),
+            rgb(255, 0, 255));
+    background-size: 300% 300%;
+}
+
+.btnSearch:hover {
+    animation-name: btnHover;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* Mars Image */
+
+.marsImg {
+    width: 100%;
+    min-height: 500px;
+    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    padding-bottom: 3%;
+}
+
+.marsImg h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: TROGLO, sans-serif;
+    background: linear-gradient(90deg,
+            rgb(255, 69, 0),
+            /* Vermelho alaranjado (Marte) */
+            rgb(255, 165, 0),
+            /* Laranja vibrante */
+            rgb(255, 215, 0),
+            /* Amarelo dourado */
+            rgb(0, 191, 255),
+            /* Azul céu */
+            rgb(75, 0, 130),
+            /* Índigo profundo */
+            rgb(138, 43, 226)
+            /* Azul violeta */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 3%;
+}
+
+.marsImg .container {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.marsImg .container .form {
+    margin: auto auto;
+    width: 90%;
+    height: 95%;
+    background-color: #000000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.marsImg .container .form h2 {
+    color: white;
+}
+
+.marsImg .container .form .camSearch {
+    margin: 3% 0;
+    color: white;
+    font-size: 30px;
+    font-family: TROGLO, sans-serif;
+    font-weight: bold;
+    background: linear-gradient(90deg,
+            rgb(255, 69, 0),
+            /* Vermelho alaranjado (cor de Marte) */
+            rgb(255, 165, 0),
+            /* Laranja brilhante */
+            rgb(0, 191, 255),
+            /* Azul céu */
+            rgb(75, 0, 130),
+            /* Índigo */
+            rgb(138, 43, 226),
+            /* Azul violeta */
+            rgb(255, 105, 180)
+            /* Rosa vibrante */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.marsImg .container .form .cam {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 3px;
+}
+
+.marsImg .container .form .cam button {
+    gap: 10px;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    background: linear-gradient(45deg,
+            rgb(255, 140, 0),
+            /* Laranja queimado */
+            rgb(255, 105, 180),
+            /* Rosa choque */
+            rgb(0, 191, 255),
+            /* Azul céu */
+            rgb(75, 0, 130),
+            /* Índigo profundo */
+            rgb(255, 69, 0)
+            /* Vermelho alaranjado */
+        );
+    background-size: 300% 300%;
+    border: 5px solid #000000;
+}
+
+
+.marsImg .container .form .cam button:hover {
+    animation-name: btnHoverMars;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.marsImg .container .form .formButton {
+    margin: 3% 0;
+    font-family: Orbitron, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,
+            rgb(0, 191, 255),
+            rgb(138, 43, 226),
+            rgb(255, 165, 0),
+            rgb(255, 20, 147),
+            rgb(255, 69, 0));
+    background-size: 300% 300%;
+    cursor: pointer;
+}
+
+.marsImg .container .form .formButton:hover {
+    animation-name: btnHover;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.marsImg .container .CardsMars {
+    margin: 3% 0;
+    width: 400px;
+    height: 300px;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    border: 5px solid red;
+    box-shadow: 0 0 12px 1px red;
+}
+
+.marsImg .container .CardsMars img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.marsImg .container .CardsMars span {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg,
+            rgb(255, 99, 71),
+            /* Tom laranja avermelhado (solo marciano) */
+            rgb(255, 165, 0),
+            /* Laranja (ambiente de Marte) */
+            rgb(255, 215, 0),
+            /* Amarelo dourado (luz solar) */
+            rgb(70, 130, 180),
+            /* Azul acinzentado (céu marciano) */
+            rgb(105, 105, 105),
+            /* Cinza escuro (sombra nas rochas) */
+            rgb(128, 128, 128)
+            /* Cinza (tonalidades do terreno) */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.marsImg .btnMarsMenu {
+    padding: 10px 50px;
+    margin: 2% 0;
+    font-size: 20px;
+    font-family: Orbitron, sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    background: linear-gradient(90deg,
+            rgb(0, 191, 255),
+            rgb(138, 43, 226),
+            rgb(255, 165, 0),
+            rgb(255, 20, 147),
+            rgb(255, 69, 0));
+    background-size: 300% 300%;
+    cursor: pointer;
+}
+
+.marsImg .btnMarsMenu:hover {
+    animation-name: btnHover;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.marsImg .loadingMarsImg {
+    width: 100px;
+    height: 100px;
+    border: 5px solid white;
+    border-top:  5px solid blue;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.BtnPages {
+    width: 75%;
+    height: 200px;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Footer */
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgb(38, 6, 107), rgb(0, 0, 0), rgb(0, 51, 102), rgb(204, 0, 0));
+    background-size: 300% 300%;
+    animation-name: footerGradient;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.footer a {
+    font-size: 30px;
+    font-family: Orbitron, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    background: linear-gradient(90deg,
+            rgb(255, 0, 255),
+            /* Magenta vibrante */
+            rgb(0, 255, 255),
+            /* Ciano brilhante */
+            rgb(255, 255, 0),
+            /* Amarelo brilhante */
+            rgb(255, 105, 180),
+            /* Rosa choque */
+            rgb(255, 165, 0),
+            /* Laranja vibrante */
+            rgb(0, 191, 255),
+            /* Azul céu */
+            rgb(255, 0, 0)
+            /* Vermelho brilhante */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.footer a:hover {
+    border-bottom: 3px solid blue;
+    border-radius: 5px;
+}
